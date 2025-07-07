@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chatbot dengan Background</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: transparent;
+      overflow: hidden;
+    }
+
+    .gradient-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .gradient-bg * {
+      pointer-events: none;
+      mix-blend-mode: normal !important;
+    }
+
+    .content-wrapper {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    #chat-wrapper {
+      max-width: 400px;
+      width: 90%;
+      padding: 30px;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+
+    #chat-wrapper h2,
+    #chat-wrapper p {
+      color: black;
+    }
+
+    #chat-wrapper input {
+      padding: 10px;
+      width: 80%;
+      margin: 15px 0;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+      color: black;
+    }
+
+    #chat-wrapper button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      background: #B33791;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #chat-wrapper button:hover {
+      background: #8B1C68;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .chat-header {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .chat-input {
+      display: flex;
+      margin-top: 15px;
+    }
+
+    .chat-input input {
+      flex: 1;
+      padding: 10px;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+      color: black;
+    }
+
+    .chat-input button {
+      margin-left: 10px;
+      border-radius: 20px;
+      background: #B33791;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+    #chat-box {
+      text-align: left;
+      max-height: 300px;
+      overflow-y: auto;
+      margin-bottom: 10px;
+    }
+
+    .message {
+      margin: 5px 0;
+      padding: 8px 12px;
+      border-radius: 15px;
+      font-size: 14px;
+    }
+
+    .message.user {
+      background: #B33791;
+      color: white;
+      text-align: right;
+    }
+
+    .message.bot {
+      background: #eee;
+      color: #333;
+      text-align: left;
+    }
+
+    /* Styling untuk logo */
+    /* .chatbot-logo {
+      display: block;
+      margin: 0 auto; 
+      max-width: 80px; 
+      height: auto; 
+      margin-bottom: 10px; 
+    } */
+
+    /* .logo {
+  display: block;
+  margin: 60px auto; 
+  max-width: 80px; 
+  height: 500px; 
+  margin-bottom: 10px; 
+  margin-top: 300px;
+}  */
+  </style>
+</head>
+
+<body>
+  <div class="content-wrapper">
+    <div id="chat-wrapper">
+
+      <div id="name-form-container">
+        <h2>👋 Halo, Selamat Datang!</h2>
+        <p>Masukkan nama Anda:</p>
+        <input type="text" id="userNameInput" placeholder="Nama Anda...">
+        <button onclick="startChat()">Start Chat</button>
+        <button><a href="localhost/rey_2/index.php">Back</a></button>
+      </div>
+
+      <div id="chat-container" class="hidden">
+        <div class="">
+          <img class="logo" src="PRYR ChatBot.png">
+        </div>
+        <div id="chat-box"></div>
+        <div class="chat-input">
+          <input type="text" id="userInput" placeholder="Ketik pertanyaan Anda..." disabled>
+          <button onclick="sendMessage()" disabled>Kirim</button>
+        </div>
+        <button><a href="localhost/rey_2/index.php">Back</a></button>
+      </div>
+    </div>
+  </div>
+  <div class="gradient-bg">
+    <div class="gradients-container">
+      <div class="g1"></div>
+      <div class="g2"></div>
+      <div class="g3"></div>
+      <div class="g4"></div>
+      <div class="g5"></div>
+      <div class="interactive"></div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
